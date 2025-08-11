@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 import Modal from './Modal';
-import Confetti from './Confetti';
+import FullScreenConfetti from './FullScreenConfetti';
 
 const API_BASE_URL = 'http://localhost:5000/api';
 
@@ -186,7 +186,7 @@ function App() {
 
   return (
     <div className="App">
-      <Confetti show={showConfetti} />
+      <FullScreenConfetti show={showConfetti} />
       <header className="App-header">
         <h1>🏆 Texan Boys Lottery Draft 🏆</h1>
         <button
