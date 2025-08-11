@@ -29,13 +29,11 @@ function App() {
   useEffect(() => {
     let interval;
     if (loading) {
-      setLoadingDots('.');
+      setLoadingDots('');
       interval = setInterval(() => {
         setLoadingDots(prev => {
-          if (prev === '...') {
-            return '.';
-          }
-          return prev + '.';
+        
+          return prev + '🥁';
         });
       }, 500);
     } else {
@@ -281,7 +279,7 @@ function App() {
         <div className="controls-section">
           {!draftState.is_complete && ( 
             <button 
-              className="generate-button primary-button"
+              className={loading ? `generate-button secondary-button` : `generate-button primary-button`}
               onClick={() => {
                 setLoading(true);
                 //Intentional 5 second delay to add suspense
@@ -291,7 +289,7 @@ function App() {
               }}
               disabled={loading || draftState.is_complete}
             >
-              {loading ? `Drum roll${loadingDots}` : `Generate Pick #${draftState.draft_order.length + 1}`}
+              {loading ? ` 🥁${loadingDots} ` : `Generate Pick #${draftState.draft_order.length + 1}`}
             </button>
           )}
 
