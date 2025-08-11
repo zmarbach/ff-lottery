@@ -95,8 +95,6 @@ function App() {
       // Trigger confetti effect and modal
       setShowConfetti(true);
       setShowPickResultModal(true);
-      setTimeout(() => setShowConfetti(false), 5000); // Show for 5 seconds
-
     } catch (err) {
       setError('Failed to generate next pick');
       console.error('Error generating pick:', err);
@@ -104,6 +102,11 @@ function App() {
       setLoading(false);
     }
   };
+
+  const handleClosePickResultModal = () => {  
+    setShowPickResultModal(false);
+    setShowConfetti(false);
+  }
 
   const handleTeamNameEdit = (index, newName) => {
     // Only update local state during typing
@@ -301,7 +304,7 @@ function App() {
         </div>
       </div>
       
-      <Modal show={showPickResultModal} onClose={() => setShowPickResultModal(false)}>
+      <Modal show={showPickResultModal} onClose={() => handleClosePickResultModal()}>
         {/* Get last name in draft order because it will be most recent pick */}
         {draftState && draftState.draft_order.length > 0 && (
           <>
