@@ -1,3 +1,6 @@
-.confetti-wrapper {
-    z-index: 10002;
+/* Override internal css of Confetti library 
+to make confetti appear on top of screen instead of background */
+.confetti-wrapper canvas {
+    z-index: 10002 !important;
+    position: fixed !important;
 }

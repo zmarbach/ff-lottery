@@ -12,7 +12,7 @@ const FullScreenConfetti = ({ show }) => {
             <Confetti
                 width={width}
                 height={height}
-                numberOfPieces={500}
+                numberOfPieces={200}
                 gravity={0.5}
                 colors={['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#feca57', '#ff9ff3', '#54a0ff']}
             />
