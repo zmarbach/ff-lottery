@@ -190,7 +190,7 @@ function App() {
   // Random delay between 3s and 10s
   const getRandomDramaDelay = (min, max) => {
     var randomNum = Math.floor(Math.random() * (max - min + 1) + min);
-    console.log('Drama delay:', randomNum * 1000);
+    console.log('Drama delay: ' +  randomNum + ' seconds');
     return randomNum * 1000;
   };
 
