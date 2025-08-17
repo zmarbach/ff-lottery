@@ -187,6 +187,13 @@ function App() {
     }
   };
 
+  // Random delay between 3s and 10s
+  const getRandomDramaDelay = (min, max) => {
+    var randomNum = Math.floor(Math.random() * (max - min + 1) + min);
+    console.log('Drama delay:', randomNum * 1000);
+    return randomNum * 1000;
+  };
+
   return (
     <div className="App">
       <FullScreenConfetti show={showConfetti} />
@@ -285,10 +292,9 @@ function App() {
               className={loading ? `generate-button secondary-button` : `generate-button primary-button`}
               onClick={() => {
                 setLoading(true);
-                //Intentional 5 second delay to add suspense
                 setTimeout(() => {
                   generateNextPick();
-                }, 5000);
+                }, getRandomDramaDelay(3, 10));
               }}
               disabled={loading || draftState.is_complete}
             >
